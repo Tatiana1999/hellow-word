@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Prototipo Whois inicio</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+    <link href="{% static 'jumbotron.css" rel="stylesheet' %}">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <link rel="icon" href="../static/bootstrap/fonts">
+
+  </head>
+
+  <body>
+
+ <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background:#007dc5">
+      <div class="container">
+        <h1  style="color:white; margin-top:-15px" >Win Sports!</h1>
+        <p style="color:white">Datos de registros del dominio.</p>
+        </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+
+        <button class="btn " style="background:#00ada1;"><a href="/search/" style="color:white">Buscar palabras</a></button>
+      <div class="row">
+        <br>
+        <div class="col-md-4">
+           <table class="table table-bordered">
+                <thead style="color:#87499c">
+                    <tr>
+                      <th>Información de paginas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                     <tr><td><a href="/whois/{{ i }}" style="color:black">{{ i }}
+                    </a></tr></td>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <div  class="col-md-4">
+           <table class="table table-bordered">
+                <thead style="color:#87499c">
+                    <tr>
+                        <th>Descargar Html</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in url %}
+                     <tr><td><a href="/descarga/{{ i }}" style="color:black">{{ i }}
+                    </a></tr></td>
+                    {% endfor %}
+                </tbody>
+            </table>
+      </div>
+     </div>
+
+      <hr>
+
+      <footer>
+        <p>Buho media S.A.S</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
